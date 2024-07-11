@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,21 +9,31 @@ body {
 }
 
 .container {
-    background-color: white;
+    background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 100%;
+    max-width: 400px;
     text-align: center;
 }
 
 h1 {
     font-size: 24px;
     margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1::before {
+    content: "☕️";
+    margin-right: 10px;
 }
 
 .input-group {
     margin-bottom: 15px;
+    text-align: left;
 }
 
 label {
@@ -32,12 +42,13 @@ label {
     margin-bottom: 5px;
 }
 
-input {
+input, select {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 14px;
 }
 
 button {
@@ -48,6 +59,8 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    margin-top: 10px;
+    width: 100%;
 }
 
 button:hover {
