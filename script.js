@@ -33,6 +33,9 @@ function calculateBitcoin() {
     const weeks = Math.floor(totalDays / 7);
     const totalSpent = coffeePrice * coffeesPerWeek * weeks;
 
+    // Debugging: Log the total days and weeks calculated
+    console.log(`Total Days: ${totalDays}, Total Weeks: ${weeks}, Total Spent: ${totalSpent}`);
+
     // Fetch historical Bitcoin prices and calculate accumulated Bitcoin
     fetch(`https://api.coindesk.com/v1/bpi/historical/close.json?currency=${currency}&start=${startDate.toISOString().split('T')[0]}&end=${currentDate.toISOString().split('T')[0]}`)
         .then(response => response.json())
@@ -41,6 +44,9 @@ function calculateBitcoin() {
             let totalBitcoin = 0;
             const weeklySpend = coffeePrice * coffeesPerWeek;
 
+            // Debugging: Log the fetched historical prices
+            console.log('Fetched Historical Prices:', prices);
+
             // Loop through each week from the start date to the end date
             let dateIterator = new Date(startDate);
             while (dateIterator <= currentDate) {
@@ -48,6 +54,8 @@ function calculateBitcoin() {
                 if (prices[dateString]) {
                     totalBitcoin += weeklySpend / prices[dateString];
                 }
+                // Debugging: Log each date and corresponding Bitcoin amount
+                console.log(`Date: ${dateString}, Bitcoin Price: ${prices[dateString]}, Total Bitcoin: ${totalBitcoin}`);
                 // Move to the next week
                 dateIterator.setDate(dateIterator.getDate() + 7);
             }
