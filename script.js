@@ -42,14 +42,14 @@ function calculateBitcoin() {
             let weeklySpend = coffeePrice * coffeesPerWeek;
 
             // Loop through each week from the start date to the end date
-            let currentDate = new Date(startDate);
-            while (currentDate <= new Date()) {
-                let dateString = currentDate.toISOString().split('T')[0];
+            let dateIterator = new Date(startDate);
+            while (dateIterator <= currentDate) {
+                let dateString = dateIterator.toISOString().split('T')[0];
                 if (prices[dateString]) {
                     totalBitcoin += weeklySpend / prices[dateString];
                 }
                 // Move to the next week
-                currentDate.setDate(currentDate.getDate() + 7);
+                dateIterator.setDate(dateIterator.getDate() + 7);
             }
 
             document.getElementById('result').innerHTML = `
