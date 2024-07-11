@@ -3,31 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitcoin Lifestyle Calculator</title>
+    <title>Coffee to Bitcoin Calculator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Bitcoin Lifestyle Calculator</h1>
+        <h1>Coffee to Bitcoin Calculator</h1>
         <div class="input-group">
-            <label for="expense">Monthly Expense in USD:</label>
-            <input type="number" id="expense" placeholder="Enter amount in USD">
+            <label for="coffee-price">Price of your coffee order (USD):</label>
+            <input type="number" id="coffee-price" placeholder="Enter price in USD">
         </div>
         <div class="input-group">
-            <label for="btc-price">Current Bitcoin Price (USD):</label>
-            <input type="number" id="btc-price" placeholder="Fetching...">
+            <label for="coffees-per-week">Number of coffees per week:</label>
+            <input type="number" id="coffees-per-week" placeholder="Enter number of coffees">
         </div>
         <div class="input-group">
-            <label for="projection">Projection Period (months):</label>
-            <input type="number" id="projection" placeholder="Enter number of months">
+            <label for="start-date">Start Date:</label>
+            <input type="date" id="start-date">
         </div>
-        <div class="input-group">
-            <label for="growth-rate">Annual Growth Rate (%):</label>
-            <input type="number" id="growth-rate" placeholder="Enter expected growth rate">
-        </div>
-        <button onclick="calculateBitcoinExpense()">Calculate</button>
+        <button onclick="calculateBitcoin()">Calculate</button>
         <div id="result"></div>
-        <canvas id="expenseChart" width="400" height="200"></canvas>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
