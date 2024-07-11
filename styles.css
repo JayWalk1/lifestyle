@@ -74,7 +74,8 @@ button:hover {
     text-align: center;
 }
 
-#result span {
-    display: block;
-    margin-top: 10px;
+#result img {
+    width: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
 }
