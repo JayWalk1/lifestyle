@@ -46,7 +46,7 @@ function calculateBitcoin() {
 
             document.getElementById('result').innerHTML = `
                 You spent this much on ☕️: ${currencySymbols[currency]}${totalSpent.toLocaleString()}<br>
-                If you invested it in ${bitcoinLogo} you would have: ${totalBitcoin.toFixed(6)}
+                If you invested it in ${bitcoinLogo}: ${totalBitcoin.toFixed(6)}
             `;
         })
         .catch(error => {
