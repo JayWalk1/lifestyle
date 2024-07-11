@@ -1,34 +1,25 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f5f5f5;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .container {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 450px;
     text-align: center;
 }
 
 h1 {
     font-size: 24px;
     margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-h1::before {
-    content: "☕️";
-    margin-right: 10px;
 }
 
 .input-group {
@@ -51,6 +42,15 @@ input, select {
     font-size: 14px;
 }
 
+.date-selectors {
+    display: flex;
+    justify-content: space-between;
+}
+
+.date-selectors select {
+    width: 48%;
+}
+
 button {
     background-color: #007bff;
     color: white;
@@ -71,4 +71,10 @@ button:hover {
     margin-top: 20px;
     font-size: 18px;
     font-weight: bold;
+    text-align: center;
+}
+
+#result span {
+    display: block;
+    margin-top: 10px;
 }
