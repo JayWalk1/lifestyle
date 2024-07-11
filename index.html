@@ -8,13 +8,21 @@
 </head>
 <body>
     <div class="container">
-        <h1>Coffee to Bitcoin Calculator</h1>
+        <h1>☕️ Coffee to Bitcoin Calculator</h1>
         <div class="input-group">
-            <label for="coffee-price">Price of your coffee order (USD):</label>
-            <input type="number" id="coffee-price" placeholder="Enter price in USD">
+            <label for="currency">Select your currency:</label>
+            <select id="currency">
+                <option value="USD">USD</option>
+                <option value="GBP">GBP</option>
+                <option value="EUR">EUR</option>
+            </select>
         </div>
         <div class="input-group">
-            <label for="coffees-per-week">Number of coffees per week:</label>
+            <label for="coffee-price">Price of your coffee order:</label>
+            <input type="number" id="coffee-price" placeholder="Enter price">
+        </div>
+        <div class="input-group">
+            <label for="coffees-per-week">How many coffees do you buy per week?</label>
             <input type="number" id="coffees-per-week" placeholder="Enter number of coffees">
         </div>
         <div class="input-group">
