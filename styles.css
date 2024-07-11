@@ -6,6 +6,7 @@ body {
     height: 100vh;
     margin: 0;
     background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
 }
 
 .container {
@@ -13,8 +14,10 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    width: 450px;
+    width: 100%;
+    max-width: 450px;
     text-align: center;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -78,4 +81,33 @@ button:hover {
     width: 20px;
     vertical-align: middle;
     margin-right: 5px;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    input, select {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #result {
+        font-size: 16px;
+    }
+
+    .date-selectors {
+        flex-direction: column;
+    }
+
+    .date-selectors select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }
