@@ -39,7 +39,7 @@ function calculateBitcoin() {
         .then(data => {
             const prices = data.bpi;
             let totalBitcoin = 0;
-            let weeklySpend = coffeePrice * coffeesPerWeek;
+            const weeklySpend = coffeePrice * coffeesPerWeek;
 
             // Loop through each week from the start date to the end date
             let dateIterator = new Date(startDate);
