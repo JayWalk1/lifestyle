@@ -20,7 +20,6 @@ function calculateBitcoin() {
         'GBP': '£',
         'EUR': '€'
     };
-    const bitcoinSymbol = '₿';
 
     if (isNaN(coffeePrice) || isNaN(coffeesPerWeek) || isNaN(startMonth) || isNaN(startYear) || coffeePrice <= 0 || coffeesPerWeek <= 0) {
         document.getElementById('result').innerText = "Please enter valid values.";
@@ -50,7 +49,7 @@ function calculateBitcoin() {
 
             document.getElementById('result').innerHTML = `
                 If you bought Bitcoin instead of ☕️, you would have...
-                <span>${bitcoinSymbol} ${totalBitcoin.toFixed(6)}</span>
+                <span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/20px-Bitcoin.svg.png" alt="Bitcoin Logo"> ${totalBitcoin.toFixed(6)}</span>
                 worth ${currencySymbols[currency]}${totalValue.toLocaleString()} today.
             `;
         })
