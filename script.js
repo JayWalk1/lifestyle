@@ -20,6 +20,7 @@ function calculateBitcoin() {
         'GBP': '£',
         'EUR': '€'
     };
+    const bitcoinLogo = '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/20px-Bitcoin.svg.png" alt="Bitcoin Logo">';
 
     if (isNaN(coffeePrice) || isNaN(coffeesPerWeek) || isNaN(startMonth) || isNaN(startYear) || coffeePrice <= 0 || coffeesPerWeek <= 0) {
         document.getElementById('result').innerText = "Please enter valid values.";
@@ -43,14 +44,9 @@ function calculateBitcoin() {
                 totalBitcoin += weeklySpend / prices[date];
             });
 
-            const lastDate = Object.keys(prices).pop();
-            const lastPrice = prices[lastDate];
-            const totalValue = totalBitcoin * lastPrice;
-
             document.getElementById('result').innerHTML = `
-                If you bought Bitcoin instead of ☕️, you would have...
-                <span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/20px-Bitcoin.svg.png" alt="Bitcoin Logo"> ${totalBitcoin.toFixed(6)}</span>
-                worth ${currencySymbols[currency]}${totalValue.toLocaleString()} today.
+                You spent this much on ☕️: ${currencySymbols[currency]}${totalSpent.toLocaleString()}<br>
+                If you invested it in ${bitcoinLogo}: ${totalBitcoin.toFixed(6)}
             `;
         })
         .catch(error => {
