@@ -12,8 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function calculateBitcoin() {
     const coffeePrice = parseFloat(document.getElementById('coffee-price').value);
     const coffeesPerWeek = parseInt(document.getElementById('coffees-per-week').value);
-    const startMonth = parseInt(document.getElementById('start-month').value);
-    const startYear = parseInt(document.getElementById('start-year').value);
+    const startDate = new Date(document.getElementById('start-date').value);
     const currency = document.getElementById('currency').value;
     const currencySymbols = {
         'USD': '$',
@@ -22,12 +21,11 @@ function calculateBitcoin() {
     };
     const bitcoinSymbol = '₿';
 
-    if (isNaN(coffeePrice) || isNaN(coffeesPerWeek) || isNaN(startMonth) || isNaN(startYear) || coffeePrice <= 0 || coffeesPerWeek <= 0) {
+    if (isNaN(coffeePrice) || isNaN(coffeesPerWeek) || isNaN(startDate.getTime()) || coffeePrice <= 0 || coffeesPerWeek <= 0) {
         document.getElementById('result').innerText = "Please enter valid values.";
         return;
     }
 
-    const startDate = new Date(startYear, startMonth - 1, 1);
     const currentDate = new Date();
     const totalDays = Math.floor((currentDate - startDate) / (1000 * 60 * 60 * 24));
     const weeks = Math.floor(totalDays / 7);
@@ -39,14 +37,11 @@ function calculateBitcoin() {
         .then(data => {
             const prices = data.bpi;
             let totalBitcoin = 0;
-            const weeklySpend = coffeePrice * coffeesPerWeek;
-
-            // Loop through each date and calculate the total Bitcoin accumulated
             Object.keys(prices).forEach(date => {
+                const weeklySpend = coffeePrice * coffeesPerWeek;
                 totalBitcoin += weeklySpend / prices[date];
             });
 
-            // Get the latest Bitcoin price
             const lastDate = Object.keys(prices).pop();
             const lastPrice = prices[lastDate];
             const totalValue = totalBitcoin * lastPrice;
